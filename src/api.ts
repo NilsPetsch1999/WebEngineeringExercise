@@ -2,6 +2,7 @@
 const BASE = 'https://en.wikipedia.org/w/api.php';
 const ORIGIN = { origin: '*' };
 
+
 const toQS = (
   params:
     | string
