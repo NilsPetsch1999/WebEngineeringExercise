@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Wildlife — Bears</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <h1>Welcome to our wildlife website</h1>
+   
+
+    <div class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our team</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+
+      <form class="search" role="search" aria-label="Search site">
+        <label for="q" class="visually-hidden" hidden>Search query</label>
+        <input id="q" type="search" name="q" placeholder="Search article…" />
+        <button type="submit">Go</button>
+      </form>
+    </nav>
+    </div>
+
+  </header>
+
+  <main id="main">
+    <article>
+      <header>
+        <h2>The trouble with Bears</h2>
+        <p>By <em>Evan Wild</em></p>
+      </header>
+
+      <section aria-labelledby="types">
+        <h3 id="types">Types of bear</h3>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Bear Type</th>
+              <th scope="col">Coat</th>
+              <th scope="col">Adult size</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Diet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wild</td>
+              <td>Brown or black</td>
+              <td>1.4 to 2.8 meters</td>
+              <td>Woods and forests</td>
+              <td>25 to 28 years</td>
+              <td>Fish, meat, plants</td>
+            </tr>
+            <tr>
+              <td>Urban</td>
+              <td>North Face</td>
+              <td>18 to 22</td>
+              <td>Condos and coffee shops</td>
+              <td>20 to 32 years</td>
+              <td>Starbucks, sushi</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="habitats">
+        <h3 id="habitats">Habitats and eating habits</h3>
+        <p>Wild bears eat a variety of meat, fish, fruit, nuts, and other naturally growing ingredients…</p>
+        <figure>
+          <img src="media/wild-bear.jpg" alt="Wild bear in forest" />
+          <figcaption>Wild bear in a forest.</figcaption>
+        </figure>
+        <p>Urban (gentrified) bears on the other hand have largely abandoned the old ways…</p>
+        <figure>
+          <img src="media/urban-bear.jpg" alt="Urban bear near buildings" />
+          <figcaption>Urban bear near buildings.</figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="mating">
+        <h3 id="mating">Mating rituals</h3>
+        <p>Bears are romantic creatures by nature…</p>
+        <audio controls>
+          <source src="media/bear.mp3" type="audio/mpeg" />
+          <source src="media/bear.ogg" type="audio/ogg" />
+          <p>Your browser doesn’t support HTML5 audio.</p>
+        </audio>
+      </section>
+
+      <aside aria-labelledby="about-author">
+        <h3 id="about-author">About the author</h3>
+        <p>Evan Wild is an unemployed plumber from Doncaster…</p>
+      </aside>
+
+      <section class="comments" aria-labelledby="comments-title">
+        <button type="button" class="toggle-comments" aria-expanded="false" aria-controls="comment-panel">Show comments</button>
+
+        <div id="comment-panel" class="comment-wrapper hidden">
+          <h3 id="comments-title">Comments</h3>
+
+          <form class="comment-form" novalidate>
+            <div class="flex-pair">
+              <label for="name">Your name</label>
+              <input type="text" name="name" id="name" placeholder="Enter your name" required />
+            </div>
+            <div class="flex-pair">
+              <label for="comment">Your comment</label>
+              <input type="text" name="comment" id="comment" placeholder="Enter your comment" required />
+            </div>
+            <button type="submit">Submit comment</button>
+            <p class="error hidden" aria-live="polite"></p>
+          </form>
+
+          <ul class="comment-container">
+            <li>
+              <p><strong>Bob Fossil</strong></p>
+              <p>Oh I am so glad you taught me all about the big brown angry guys…</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="more_bears" aria-labelledby="more-bears">
+        <h3 id="more-bears">More Bears</h3>
+        <p class="load-status" aria-live="polite">Loading bears…</p>
+        <div class="bears-grid" data-bears></div>
+        <p class="error hidden" data-bears-error aria-live="polite"></p>
+      </section>
+    </article>
+
+    <aside class="secondary">
+      <h3>Related</h3>
+      <ul>
+        <li><a href="#">The trouble with Bees</a></li>
+        <li><a href="#">The trouble with Otters</a></li>
+        <li><a href="#">The trouble with Penguins</a></li>
+        <li><a href="#">The trouble with Octopi</a></li>
+        <li><a href="#">The trouble with Lemurs</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© Copyright 2050 by nobody. All rights reversed.</p>
+  </footer>
+
+  <!-- JS modules -->
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

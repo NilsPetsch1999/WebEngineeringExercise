@@ -1,0 +1,27 @@
+// .eslintrc.cjs
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: ['./tsconfig.eslint.json'], // see file below
+    tsconfigRootDir: __dirname,
+    sourceType: 'module'
+  },
+  env: { browser: true, es2021: true },
+  extends: [
+    'standard-with-typescript',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'prettier'
+  ],
+  plugins: ['@typescript-eslint'],
+  ignorePatterns: [
+    'dist',
+    'node_modules',
+    'vite.config.ts'
+  ],
+  rules: {
+    // Relax noisy rules if needed:
+    '@typescript-eslint/explicit-function-return-type': 'off'
+  }
+};
