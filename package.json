@@ -15,10 +15,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix || true",
-      "prettier --write"
+      "eslint --fix"
     ],
     "*.{json,md,css,scss,html,yml,yaml}": [
+      "prettier --write"
+    ],
+    "package.json": [
       "prettier --write"
     ]
   },
