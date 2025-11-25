@@ -1,9 +1,11 @@
 // js/main.js
+import './comments-component.ts';
 import { fetchUrsidsWikitext, fetchImageUrlFromFile } from './api.js';
 import { mountBearCards, setLoadStatus } from './render.js';
 import { initComments } from './comments.js';
 import { initSearch } from './search.js';
 import { qs, verifyImageUrl, hide, placeholderImg } from './utils.js';
+
 
 const BEARS_CONTAINER_SEL = '[data-bears]';
 const ERR_SEL = '[data-bears-error]';

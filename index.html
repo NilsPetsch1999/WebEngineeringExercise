@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>Wildlife — Bears</title>
@@ -7,11 +8,10 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header" role="banner">
     <h1>Welcome to our wildlife website</h1>
-   
-
     <div class="nav">
       <ul>
         <li><a href="#">Home</a></li>
@@ -21,106 +21,111 @@
       </ul>
 
       <form class="search" role="search" aria-label="Search site">
-        <label for="q" class="visually-hidden" hidden>Search query</label>
-        <input id="q" type="search" name="q" placeholder="Search article…" />
+        <label for="search" class="sr-only">Search query</label>
+        <input id="search" type="search" name="search" placeholder="Search article…" />
         <button type="submit">Go</button>
       </form>
-    </nav>
     </div>
-
   </header>
 
   <main id="main">
-    <article>
-      <header>
+    <article tabindex="0">
+      <header tabindex="0">
         <h2>The trouble with Bears</h2>
         <p>By <em>Evan Wild</em></p>
       </header>
 
-      <section aria-labelledby="types">
+      <section aria-labelledby="types" tabindex="0">
         <h3 id="types">Types of bear</h3>
         <table>
-          <thead>
-            <tr>
-              <th scope="col">Bear Type</th>
-              <th scope="col">Coat</th>
-              <th scope="col">Adult size</th>
-              <th scope="col">Habitat</th>
-              <th scope="col">Lifespan</th>
-              <th scope="col">Diet</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Wild</td>
-              <td>Brown or black</td>
-              <td>1.4 to 2.8 meters</td>
-              <td>Woods and forests</td>
-              <td>25 to 28 years</td>
-              <td>Fish, meat, plants</td>
-            </tr>
-            <tr>
-              <td>Urban</td>
-              <td>North Face</td>
-              <td>18 to 22</td>
-              <td>Condos and coffee shops</td>
-              <td>20 to 32 years</td>
-              <td>Starbucks, sushi</td>
-            </tr>
-          </tbody>
-        </table>
+  <caption>
+    Comparison of wild bears and urban bears, showing coat color, size, habitat, lifespan, and diet.
+  </caption>
+
+  <thead>
+    <tr>
+      <th id="col-type" scope="col" tabindex="0">Bear Type</th>
+      <th id="col-coat" scope="col" tabindex="0">Coat</th>
+      <th id="col-size" scope="col" tabindex="0">Adult size</th>
+      <th id="col-habitat" scope="col" tabindex="0">Habitat</th>
+      <th id="col-life" scope="col" tabindex="0">Lifespan</th>
+      <th id="col-diet" scope="col" tabindex="0">Diet</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th id="row-wild" scope="row" tabindex="0">Wild</th>
+
+      <td tabindex="0" aria-labelledby="row-wild col-coat" aria-label="column 1 Wild, row 1 Coat, Brown or black">Brown or black</td>
+      <td tabindex="0" aria-labelledby="row-wild col-size" aria-label="column 1 Wild, row 2 Adult Size, 1.4 to 2.8 meters">1.4 to 2.8 meters</td>
+      <td tabindex="0" aria-labelledby="row-wild col-habitat" aria-label="column 1 Wild, row 3 Habitat, Woods and forests">Woods and forests</td>
+      <td tabindex="0" aria-labelledby="row-wild col-life" aria-label="column 1 Wild, row 4 Lifespan, 25 to 28 years">25 to 28 years</td>
+      <td tabindex="0" aria-labelledby="row-wild col-diet" aria-label="column 1 Wild, row 5 Diet, Fish, meat, plants">Fish, meat, plants</td>
+    </tr>
+
+    <tr>
+      <th id="row-urban" scope="row" tabindex="0">Urban</th>
+
+      <td tabindex="0" aria-label="column 2 Urban, row 1 Coat, North Face">North Face</td>
+      <td tabindex="0" aria-label="column 2 Urban, row 2 Adult Size, 18 to 22">18 to 22</td>
+      <td tabindex="0" aria-label="column 2 Urban, row 3 Habitat, Condos and coffee shops">Condos and coffee shops</td>
+      <td tabindex="0" aria-label="column 2 Urban, row 4 Lifespan, 20 to 32 years">20 to 32 years</td>
+      <td tabindex="0" aria-label="column 2 Urban, row 5 Diet, Starbucks, sushi">Starbucks, sushi</td>
+    </tr>
+  </tbody>
+</table>
+
+
       </section>
 
-      <section aria-labelledby="habitats">
+      <section aria-labelledby="habitats" tabindex="0">
         <h3 id="habitats">Habitats and eating habits</h3>
-        <p>Wild bears eat a variety of meat, fish, fruit, nuts, and other naturally growing ingredients…</p>
-        <figure>
+        <p tabindex="0">Wild bears eat a variety of meat, fish, fruit, nuts, and other naturally growing ingredients…
+        </p>
+        <figure tabindex="0">
           <img src="media/wild-bear.jpg" alt="Wild bear in forest" />
           <figcaption>Wild bear in a forest.</figcaption>
         </figure>
-        <p>Urban (gentrified) bears on the other hand have largely abandoned the old ways…</p>
-        <figure>
+        <p tabindex="0">Urban (gentrified) bears on the other hand have largely abandoned the old ways…</p>
+        <figure tabindex="0">
           <img src="media/urban-bear.jpg" alt="Urban bear near buildings" />
           <figcaption>Urban bear near buildings.</figcaption>
         </figure>
       </section>
 
-      <section aria-labelledby="mating">
+      <section aria-labelledby="mating" tabindex="0">
         <h3 id="mating">Mating rituals</h3>
-        <p>Bears are romantic creatures by nature…</p>
+        <p tabindex="0">Bears are romantic creatures by nature…</p>
+
         <audio controls>
           <source src="media/bear.mp3" type="audio/mpeg" />
           <source src="media/bear.ogg" type="audio/ogg" />
           <p>Your browser doesn’t support HTML5 audio.</p>
         </audio>
+
+        <div class="audio-transcript" aria-label="Transcript of bear audio" tabindex="0">
+          <h3>Transcript</h3>
+          <p>This isn't really an audio fact file about bears. But it is an audio file that you can transcribe. </p>
+        </div>
       </section>
 
-      <aside aria-labelledby="about-author">
+      <aside aria-labelledby="about-author" tabindex="0">
         <h3 id="about-author">About the author</h3>
         <p>Evan Wild is an unemployed plumber from Doncaster…</p>
       </aside>
 
-      <section class="comments" aria-labelledby="comments-title">
-        <button type="button" class="toggle-comments" aria-expanded="false" aria-controls="comment-panel">Show comments</button>
+      <section class="comments" aria-labelledby="comments-title" tabindex="0">
+        <button type="button" class="toggle-comments" aria-expanded="false" aria-controls="comment-panel">Show
+          comments</button>
 
-        <div id="comment-panel" class="comment-wrapper hidden">
+        <div id="comment-panel" class="comment-wrapper hidden" tabindex="0">
           <h3 id="comments-title">Comments</h3>
 
-          <form class="comment-form" novalidate>
-            <div class="flex-pair">
-              <label for="name">Your name</label>
-              <input type="text" name="name" id="name" placeholder="Enter your name" required />
-            </div>
-            <div class="flex-pair">
-              <label for="comment">Your comment</label>
-              <input type="text" name="comment" id="comment" placeholder="Enter your comment" required />
-            </div>
-            <button type="submit">Submit comment</button>
-            <p class="error hidden" aria-live="polite"></p>
-          </form>
+          <add-comment></add-comment>
 
-          <ul class="comment-container">
-            <li>
+          <ul class="comment-container" tabindex="0">
+            <li tabindex="0">
               <p><strong>Bob Fossil</strong></p>
               <p>Oh I am so glad you taught me all about the big brown angry guys…</p>
             </li>
@@ -128,12 +133,13 @@
         </div>
       </section>
 
-      <section class="more_bears" aria-labelledby="more-bears">
+      <section class="more_bears" aria-labelledby="more-bears" tabindex="0">
         <h3 id="more-bears">More Bears</h3>
-        <p class="load-status" aria-live="polite">Loading bears…</p>
-        <div class="bears-grid" data-bears></div>
-        <p class="error hidden" data-bears-error aria-live="polite"></p>
+        <p class="load-status" aria-live="polite" tabindex="0">Loading bears…</p>
+        <div class="bears-grid" data-bears tabindex="0"></div>
+        <p class="error hidden" data-bears-error aria-live="polite" tabindex="0"></p>
       </section>
+
     </article>
 
     <aside class="secondary">
@@ -155,4 +161,78 @@
   <!-- JS modules -->
   <script type="module" src="src/main.js"></script>
 </body>
+
 </html>
+
+
+<!-- Web Component -->
+
+
+<template id="add-comment-template">
+  <style>
+    /* Component-scoped styles — do NOT leak outside */
+    .comment-form {
+      margin-bottom: 3rem;
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
+
+    .flex-pair {
+      display: flex;
+      padding: 0 3rem 1rem;
+    }
+
+    label {
+      align-self: center;
+      flex: 2;
+      text-align: right;
+      font-size: 1.6rem;
+      line-height: 32px;
+    }
+
+    input {
+      margin-left: 1rem;
+      flex: 6;
+      padding: .5rem;
+      font-size: 1.6rem;
+      line-height: 32px;
+    }
+
+    button {
+      background: #333;
+      border: 0;
+      color: white;
+      width: 30%;
+      display: block;
+      margin: 0 auto;
+      padding: .5rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    .error {
+      color: #b00020;
+      margin-top: .5rem;
+      font-size: 1.6rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <form class="comment-form" novalidate>
+    <div class="flex-pair">
+      <label for="c-name">Your name</label>
+      <input id="c-name" type="text" name="name" placeholder="Enter your name" required />
+    </div>
+
+    <div class="flex-pair">
+      <label for="c-comment">Your comment</label>
+      <input id="c-comment" type="text" name="comment" placeholder="Enter your comment" required />
+    </div>
+
+    <button type="submit">Submit comment</button>
+
+    <p class="error hidden" aria-live="polite"></p>
+  </form>
+</template>

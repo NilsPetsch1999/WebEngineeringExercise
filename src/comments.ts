@@ -1,53 +1,45 @@
-// js/comments.js
-import { qs, show, hide } from './utils.js';
+import { qs, show, hide } from "./utils.js";
 
-export const initComments = () => {
-  const toggleBtn = qs('.toggle-comments');
-  const panel = qs('#comment-panel');
-  const form = qs('.comment-form');
-  const error = qs('.comment-form .error');
-  const list = qs('.comment-container');
+export const initComments = (): void => {
+  const toggleBtn = qs<HTMLButtonElement>(".toggle-comments");
+  const panel = qs<HTMLDivElement>("#comment-panel");
+  const list = qs<HTMLUListElement>(".comment-container");
 
-  // Start hidden
   hide(panel);
-  toggleBtn.addEventListener('click', () => {
-    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', String(!expanded));
-    toggleBtn.textContent = expanded ? 'Show comments' : 'Hide comments';
-    panel.classList.toggle('hidden');
+
+  toggleBtn.addEventListener("click", () => {
+    const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+    toggleBtn.setAttribute("aria-expanded", String(!expanded));
+    toggleBtn.textContent = expanded ? "Show comments" : "Hide comments";
+    panel.classList.toggle("hidden");
   });
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = qs('#name').value.trim();
-    const comment = qs('#comment').value.trim();
+  // Listen to the custom event from the Web Component
+  document.addEventListener("comment-added", (e) => {
+    const detail = (e as CustomEvent<{ name: string; comment: string }>).detail;
 
-    if (!name || !comment) {
-      error.textContent = 'Please enter both name and comment.';
-      show(error);
-      return;
-    }
+    const li = document.createElement("li");
+    li.tabIndex = 0;
 
-    hide(error);
+    const pName = document.createElement("p");
+    pName.innerHTML = `<strong>${escapeHtml(detail.name)}</strong>`;
 
-    const li = document.createElement('li');
-    const pName = document.createElement('p');
-    pName.innerHTML = `<strong>${escapeHtml(name)}</strong>`;
-    const pComment = document.createElement('p');
-    pComment.textContent = comment;
+    const pComment = document.createElement("p");
+    pComment.textContent = detail.comment;
 
     li.append(pName, pComment);
     list.append(li);
-
-    form.reset();
   });
 };
 
-const escapeHtml = (s) =>
-  s.replace(
-    /[&<>"']/g,
-    (c) =>
-      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[
-        c
-      ]
-  );
+const escapeHtml = (s: string): string =>
+  s.replace(/[&<>"']/g, (c) => {
+    const map: Record<string, string> = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+    return map[c];
+  });
